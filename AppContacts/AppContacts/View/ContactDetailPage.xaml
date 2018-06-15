@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppContacts.View.ContactDetailPage">
@@ -40,9 +40,22 @@
             HeightRequest="200"
             HorizontalOptions="FillAndExpand"
             Text="{Binding CurrentContact.Notes}"/>
+        <StackLayout Orientation="Horizontal">
         <Button
             Text="Guardar"
-            HeightRequest="150"
+            BackgroundColor="Navy"
+            TextColor="White"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"    
             Command="{Binding SaveContactCommand}"/>
+        <Button
+            Text="Eliminar"
+            HeightRequest="50"
+            BackgroundColor="Red"
+            TextColor="White"
+            HorizontalOptions="FillAndExpand"  
+            Command="{Binding DeleteContactCommand}"
+            IsEnabled="{Binding IsEnabled}"/>   
+        </StackLayout>
     </StackLayout>
 </ContentPage>

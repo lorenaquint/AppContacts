@@ -99,6 +99,18 @@ namespace AppContacts.Data
 				Debug.WriteLine($"Excepción: {ex.Message}");
 			}
 		}
+        
+		public async Task DeletetemAsync(Contact item)
+        {
+            try
+            {
+				await contactTable.DeleteAsync(item);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Excepción: {ex.Message}");
+            }
+        }
 
 
 	}
