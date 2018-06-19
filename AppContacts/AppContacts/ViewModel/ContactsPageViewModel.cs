@@ -2,6 +2,7 @@
 using AppContacts.Helper;
 using AppContacts.Model;
 using AppContacts.View;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,9 +25,11 @@ namespace AppContacts.ViewModel
 
         public ContactsPageViewModel(INavigation navigation)
         {
-            Navigation = navigation;
+			Navigation = navigation;
+            //Indica si esta conectado
+			var isConnected = CrossConnectivity.Current.IsConnected;
             Task.Run(async () =>
-			         ContactsList = await ContactsManager.DefaultInstance.GetItemsGroupedAsync()).Wait();
+			         ContactsList = await ContactsManager.DefaultInstance.GetItemsGroupedAsync(isConnected)).Wait();
             AddContactCommand = new Command(async () => await
             GoToContactDetailPage());
             ItemTappedCommand = new Command(async () => GoToContactDetailPage(CurrentContact));

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace AppContacts.Behaviors
 {
-    public class ItemTappedAttached
+	public class ItemTappedAttached
     {
         public static readonly BindableProperty CommandProperty =
             BindableProperty.CreateAttached(

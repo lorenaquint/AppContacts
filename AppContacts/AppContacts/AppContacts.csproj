@@ -12,6 +12,7 @@
     <PackageReference Include="SQLitePCL" Version="3.8.7.2" />
     <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.0.3" />
   </ItemGroup>
 
   <ItemGroup>
